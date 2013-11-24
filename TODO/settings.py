@@ -13,19 +13,13 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, "static-lib"),
 )
 
-# List of finder classes that know how to find static files in
-# various locations.
+# add this to STATICFILES_FINDERS
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
 )
 
+# add this to TEMPLATE_DIRS
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, 'templates').replace('\\','/'),
 )
 
