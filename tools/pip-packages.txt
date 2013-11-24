@@ -1,0 +1,5 @@
+beautifulsoup
+django
+django-compressor
+django-registration
+south
