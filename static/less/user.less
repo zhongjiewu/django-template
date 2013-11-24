@@ -1,0 +1,219 @@
+@import "variables.less";
+@import "mixins.less";
+
+body#user-registrations {
+  @labelWidth: 80px;
+  @marginBottom: 10px;
+  .header {
+    padding: 25px 45px;
+    margin-top: 40px;
+    .border-top-radius(5px);
+    background-color: @blue;
+    color: @white;
+  }
+  .controller {
+    position: relative;
+    padding: 60px 100px;
+    margin-bottom: 100px;
+    min-height: 370px;
+    background-color: @white;
+    .border-bottom-radius(5px)
+  }
+ .control-group {
+    position: relative;
+    margin-top: 20px; 
+  }
+  .input {
+    margin-left: 0;
+    border: none;
+    .box-shadow(none);
+    background-color: #f4f6fa;
+    font-size: larger;
+    height: 32px;
+    &:focus {
+      .box-shadow(none);
+      background-color: darken(#f4f6fa, 7%);
+    }
+    &:hover {
+      background-color: darken(#f4f6fa, 15%);
+    }
+  }
+  .btn {
+    .button-background(@btn-bg-highlight, darken(@btn-bg-highlight, 5%), @gray-dark);
+    text-shadow: none;
+  }
+  .btn.btn-info {
+    .button-background(@blueLight, darken(@blueLight,5%));
+    text-shadow: none;
+  }
+  .center-block {
+    text-align: center;
+    .wrapper {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+  div.error {
+    font-size: larger;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    i {
+      font-size: 35px;
+      color: #e62b0c;
+      margin-right: 10px;
+    }
+  }
+  .get-token {
+    input {
+      width: 350px;
+    }
+    .show-onloading {
+      display: none;
+    }
+    .loading > .hide-onloading {
+      display: none;
+    }
+    .loading > .show-onloading {
+      display: inline;
+    }
+    &.complete .success-info {
+      display: block;
+      margin-top: 20px;
+    }
+    &.complete .form {
+      display: none;
+    }
+    .success-info {
+      display: none;
+    }
+  }
+  .sign-up {
+    input {
+      width: 350px;
+    }
+    .control-group {
+      margin-bottom: @marginBottom;
+      position: relative;
+      label {
+        position: absolute;
+        left: -@labelWidth;
+        text-align: right;
+        width: @labelWidth;
+        margin: 0;
+        margin-top: 5px;
+      }
+    }
+    button, div.terms {
+      margin-bottom: @marginBottom;
+    }
+    button {
+      width: 362px;
+    }
+  }
+  .enter-name {
+    label {
+      line-height: 1em;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .prompt-real-name {
+      font-size: 0.9em;
+    }
+    .navigator {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      width: 100%;
+    }
+  }
+}
+
+
+body#user-sessions {
+  background: @white;
+  .bottom {
+    @formWidth: 250px;
+    .container:first-child {
+      border-bottom: solid 1px @gray-lighter;
+    }
+    .reset_password_prompt{
+      position: relative;
+      font-size: larger;
+      text-align:center;
+      padding:50px 20px;
+      border-bottom: solid 1px @gray-lighter;
+    }
+    form {
+      width: @formWidth;
+      margin: 100px auto 50px;
+      .wrapper {
+        input, button {
+          display: block;
+          width: 250px;
+        }
+      }
+      .control-group {
+        position: relative;
+        margin-top: 20px; 
+        label {
+          white-space: nowrap;
+          position: absolute;
+          right: @formWidth;
+          text-align: right;
+          margin: 0;
+          margin-top: 5px;
+          padding-right: 10px;
+        }
+      }
+      .remember-me label, .forget {
+        font-size: small;
+      }
+      .remember-me {
+        text-align: left;
+        label {
+          display: inline;
+        }
+      }
+      .login-options {
+        margin: 15px 0;
+        #user_remember_me {
+          margin: 0 4px 0 0;
+        }
+      }
+      button {
+        width: 250px;
+        height: 43px;
+        font-size: larger;
+        .border-radius(5px);
+        .button-background(@blueLight, darken(@blueLight,5%));
+      }
+    }
+    .error-message {
+      display: none;
+    }
+    .error .error-message {
+      display: inline-block;
+      position: absolute;
+      left: @formWidth + 20px;
+      white-space: nowrap;
+      top: 2px;
+      @login-error-tag-url: '/static/images/error-tag-left.png';
+      background: url("@login-error-tag-url") no-repeat left top;
+      padding-left: 9px;
+      > div {
+        padding: 3px 10px 4px;
+        border: solid 1px #af1b1c;
+        border-left: none;
+        .border-top-radius(3px);
+        .border-bottom-radius(3px);
+        background: #d84b47;
+        color: @white;
+      }
+    }
+    .go-sign-up {
+      margin: 20px auto;
+      font-size: small;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+*~
+*.py[cod]
+.Python
+.settings
+node_modules
+note
+
+# C extensions
+*.so
+
+# Packages
+*.db
+.idea
+
+# Translations
+*.mo
+
+# DJANGO temps
+/static/cache/*
+!/static/cache/.gitkeep
+/static/media/*
+!/static/media/.gitkeep
+/server/raas/local_settings.py
+
